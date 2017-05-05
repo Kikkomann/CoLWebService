@@ -1,6 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-1b01  svn-revision#13094. --><xs:schema xmlns:tns="http://cleanoutloudserver/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cleanoutloudserver/">
 
+<xs:element name="CustomErrorMessage" type="tns:CustomErrorMessage"/>
+
 <xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="addCamp" type="tns:addCamp"/>
+
+<xs:element name="addCampResponse" type="tns:addCampResponse"/>
 
 <xs:element name="addComment" type="tns:addComment"/>
 
@@ -10,33 +16,37 @@
 
 <xs:element name="addMessageResponse" type="tns:addMessageResponse"/>
 
-<xs:element name="answeredQuizzes" type="tns:answeredQuizzes"/>
+<xs:element name="camp" type="tns:camp"/>
 
-<xs:element name="camps" type="tns:camps"/>
+<xs:element name="comment" type="tns:comment"/>
 
 <xs:element name="createUser" type="tns:createUser"/>
 
 <xs:element name="createUserResponse" type="tns:createUserResponse"/>
 
-<xs:element name="editUser" type="tns:editUser"/>
+<xs:element name="deleteCamp" type="tns:deleteCamp"/>
 
-<xs:element name="editUserResponse" type="tns:editUserResponse"/>
+<xs:element name="deleteCampResponse" type="tns:deleteCampResponse"/>
 
 <xs:element name="getCamps" type="tns:getCamps"/>
 
 <xs:element name="getCampsResponse" type="tns:getCampsResponse"/>
 
-<xs:element name="getQuizAnswers" type="tns:getQuizAnswers"/>
+<xs:element name="getCampsSortedInWeight" type="tns:getCampsSortedInWeight"/>
 
-<xs:element name="getQuizAnswersResponse" type="tns:getQuizAnswersResponse"/>
+<xs:element name="getCampsSortedInWeightResponse" type="tns:getCampsSortedInWeightResponse"/>
 
-<xs:element name="getQuizzes" type="tns:getQuizzes"/>
+<xs:element name="getCommentsForMessage" type="tns:getCommentsForMessage"/>
 
-<xs:element name="getQuizzesResponse" type="tns:getQuizzesResponse"/>
+<xs:element name="getCommentsForMessageResponse" type="tns:getCommentsForMessageResponse"/>
 
-<xs:element name="getUsersOfAnsweredQuizzes" type="tns:getUsersOfAnsweredQuizzes"/>
+<xs:element name="getMessage" type="tns:getMessage"/>
 
-<xs:element name="getUsersOfAnsweredQuizzesResponse" type="tns:getUsersOfAnsweredQuizzesResponse"/>
+<xs:element name="getMessageResponse" type="tns:getMessageResponse"/>
+
+<xs:element name="getUser" type="tns:getUser"/>
+
+<xs:element name="getUserResponse" type="tns:getUserResponse"/>
 
 <xs:element name="getWallMessages" type="tns:getWallMessages"/>
 
@@ -46,17 +56,17 @@
 
 <xs:element name="loginResponse" type="tns:loginResponse"/>
 
-<xs:element name="loginWithBrugerAutMod" type="tns:loginWithBrugerAutMod"/>
+<xs:element name="message" type="tns:message"/>
 
-<xs:element name="loginWithBrugerAutModResponse" type="tns:loginWithBrugerAutModResponse"/>
+<xs:element name="setGarbage" type="tns:setGarbage"/>
 
-<xs:element name="messages" type="tns:messages"/>
+<xs:element name="setGarbageResponse" type="tns:setGarbageResponse"/>
 
-<xs:element name="quiz" type="tns:quiz"/>
+<xs:element name="setUser" type="tns:setUser"/>
 
-<xs:element name="quizAnswers" type="tns:quizAnswers"/>
+<xs:element name="setUserResponse" type="tns:setUserResponse"/>
 
-<xs:element name="users" type="tns:users"/>
+<xs:element name="user" type="tns:user"/>
 
 <xs:complexType name="login">
 <xs:sequence>
@@ -77,45 +87,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="addComment">
-<xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"/>
-<xs:element name="arg1" type="tns:messages" minOccurs="0"/>
-<xs:element name="arg2" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="messages">
-<xs:sequence>
-<xs:element name="date" type="xs:dateTime" minOccurs="0"/>
-<xs:element name="messageId" type="xs:int" minOccurs="0"/>
-<xs:element name="text" type="xs:string" minOccurs="0"/>
-<xs:element name="user" type="tns:users" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="users">
-<xs:sequence>
-<xs:element name="camp" type="tns:camps" minOccurs="0"/>
-<xs:element name="password" type="xs:string" minOccurs="0"/>
-<xs:element name="token" type="xs:string" minOccurs="0"/>
-<xs:element name="userName" type="xs:string" minOccurs="0"/>
-<xs:element name="userType" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="camps">
-<xs:sequence>
-<xs:element name="campName" type="xs:string" minOccurs="0"/>
-<xs:element name="garbageWeight" type="xs:int"/>
-<xs:element name="location" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="addCommentResponse">
-<xs:sequence/>
-</xs:complexType>
-
 <xs:complexType name="addMessage">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -127,61 +98,161 @@
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="getUsersOfAnsweredQuizzes">
+<xs:complexType name="CustomErrorMessage">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCamp">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getUsersOfAnsweredQuizzesResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:answeredQuizzes" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="answeredQuizzes">
-<xs:sequence>
-<xs:element name="answeredCorrect" type="xs:boolean"/>
-<xs:element name="answeredQuizzesPK" type="tns:answeredQuizzesPK" minOccurs="0"/>
-<xs:element ref="tns:quiz" minOccurs="0"/>
-<xs:element ref="tns:users" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="answeredQuizzesPK">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-<xs:element name="userName" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="quiz">
-<xs:sequence>
-<xs:element name="funFact" type="xs:string" minOccurs="0"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-<xs:element name="textQuestion" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="editUser">
-<xs:sequence>
-<xs:element name="arg0" type="tns:users" minOccurs="0"/>
 <xs:element name="arg1" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="editUserResponse">
+<xs:complexType name="deleteCampResponse">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="getQuizzes">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getQuizzesResponse">
+<xs:complexType name="setGarbage">
 <xs:sequence>
-<xs:element name="return" type="tns:quiz" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:float" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setGarbageResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getMessage">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMessageResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:message" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="message">
+<xs:sequence>
+<xs:element name="date" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="messageId" type="xs:int" minOccurs="0"/>
+<xs:element name="text" type="xs:string" minOccurs="0"/>
+<xs:element ref="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="user">
+<xs:sequence>
+<xs:element ref="tns:camp" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="userName" type="xs:string" minOccurs="0"/>
+<xs:element name="userType" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="camp">
+<xs:sequence>
+<xs:element name="campName" type="xs:string" minOccurs="0"/>
+<xs:element name="garbageWeight" type="xs:float"/>
+<xs:element name="location" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCampsSortedInWeight">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCampsSortedInWeightResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:camp" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUser">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCamp">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCampResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCommentsForMessage">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCommentsForMessageResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:comment" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="comment">
+<xs:sequence>
+<xs:element name="commentsId" type="xs:int" minOccurs="0"/>
+<xs:element name="date" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="messageId" type="tns:message" minOccurs="0"/>
+<xs:element name="text" type="xs:string" minOccurs="0"/>
+<xs:element ref="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCamps">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCampsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:camp" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setUser">
+<xs:sequence>
+<xs:element name="arg0" type="tns:user" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addComment">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCommentResponse">
+<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="createUser">
@@ -198,57 +269,13 @@
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="getQuizAnswers">
-<xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getQuizAnswersResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:quizAnswers" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="quizAnswers">
-<xs:sequence>
-<xs:element name="id" type="xs:int" minOccurs="0"/>
-<xs:element name="isCorrect" type="xs:boolean"/>
-<xs:element name="name" type="tns:quiz" minOccurs="0"/>
-<xs:element name="text" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="loginWithBrugerAutMod">
-<xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"/>
-<xs:element name="arg1" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="loginWithBrugerAutModResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="getWallMessages">
 <xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="getWallMessagesResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:messages" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getCamps">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getCampsResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:camps" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="tns:message" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

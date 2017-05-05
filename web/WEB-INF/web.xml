@@ -12,7 +12,7 @@
         </servlet-class>
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>dk.dtu.ds.login</param-value>
+            <param-value>dk.dtu.ds.rest</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

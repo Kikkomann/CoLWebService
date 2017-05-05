@@ -13,41 +13,44 @@
 <message name="Exception">
 <part name="fault" element="tns:Exception"/>
 </message>
-<message name="getQuizAnswers">
-<part name="parameters" element="tns:getQuizAnswers"/>
-</message>
-<message name="getQuizAnswersResponse">
-<part name="parameters" element="tns:getQuizAnswersResponse"/>
-</message>
-<message name="getUsersOfAnsweredQuizzes">
-<part name="parameters" element="tns:getUsersOfAnsweredQuizzes"/>
-</message>
-<message name="getUsersOfAnsweredQuizzesResponse">
-<part name="parameters" element="tns:getUsersOfAnsweredQuizzesResponse"/>
-</message>
 <message name="getCamps">
 <part name="parameters" element="tns:getCamps"/>
 </message>
 <message name="getCampsResponse">
 <part name="parameters" element="tns:getCampsResponse"/>
 </message>
-<message name="loginWithBrugerAutMod">
-<part name="parameters" element="tns:loginWithBrugerAutMod"/>
+<message name="getCampsSortedInWeight">
+<part name="parameters" element="tns:getCampsSortedInWeight"/>
 </message>
-<message name="loginWithBrugerAutModResponse">
-<part name="parameters" element="tns:loginWithBrugerAutModResponse"/>
+<message name="getCampsSortedInWeightResponse">
+<part name="parameters" element="tns:getCampsSortedInWeightResponse"/>
+</message>
+<message name="deleteCamp">
+<part name="parameters" element="tns:deleteCamp"/>
+</message>
+<message name="deleteCampResponse">
+<part name="parameters" element="tns:deleteCampResponse"/>
+</message>
+<message name="addCamp">
+<part name="parameters" element="tns:addCamp"/>
+</message>
+<message name="addCampResponse">
+<part name="parameters" element="tns:addCampResponse"/>
+</message>
+<message name="CustomErrorMessage">
+<part name="fault" element="tns:CustomErrorMessage"/>
+</message>
+<message name="setGarbage">
+<part name="parameters" element="tns:setGarbage"/>
+</message>
+<message name="setGarbageResponse">
+<part name="parameters" element="tns:setGarbageResponse"/>
 </message>
 <message name="createUser">
 <part name="parameters" element="tns:createUser"/>
 </message>
 <message name="createUserResponse">
 <part name="parameters" element="tns:createUserResponse"/>
-</message>
-<message name="editUser">
-<part name="parameters" element="tns:editUser"/>
-</message>
-<message name="editUserResponse">
-<part name="parameters" element="tns:editUserResponse"/>
 </message>
 <message name="getWallMessages">
 <part name="parameters" element="tns:getWallMessages"/>
@@ -67,11 +70,29 @@
 <message name="addCommentResponse">
 <part name="parameters" element="tns:addCommentResponse"/>
 </message>
-<message name="getQuizzes">
-<part name="parameters" element="tns:getQuizzes"/>
+<message name="getCommentsForMessage">
+<part name="parameters" element="tns:getCommentsForMessage"/>
 </message>
-<message name="getQuizzesResponse">
-<part name="parameters" element="tns:getQuizzesResponse"/>
+<message name="getCommentsForMessageResponse">
+<part name="parameters" element="tns:getCommentsForMessageResponse"/>
+</message>
+<message name="setUser">
+<part name="parameters" element="tns:setUser"/>
+</message>
+<message name="setUserResponse">
+<part name="parameters" element="tns:setUserResponse"/>
+</message>
+<message name="getUser">
+<part name="parameters" element="tns:getUser"/>
+</message>
+<message name="getUserResponse">
+<part name="parameters" element="tns:getUserResponse"/>
+</message>
+<message name="getMessage">
+<part name="parameters" element="tns:getMessage"/>
+</message>
+<message name="getMessageResponse">
+<part name="parameters" element="tns:getMessageResponse"/>
 </message>
 <portType name="ICleanOutLoud">
 <operation name="login">
@@ -79,30 +100,32 @@
 <output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/loginResponse" message="tns:loginResponse"/>
 <fault message="tns:Exception" name="Exception" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/login/Fault/Exception"/>
 </operation>
-<operation name="getQuizAnswers">
-<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getQuizAnswersRequest" message="tns:getQuizAnswers"/>
-<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getQuizAnswersResponse" message="tns:getQuizAnswersResponse"/>
-</operation>
-<operation name="getUsersOfAnsweredQuizzes">
-<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getUsersOfAnsweredQuizzesRequest" message="tns:getUsersOfAnsweredQuizzes"/>
-<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getUsersOfAnsweredQuizzesResponse" message="tns:getUsersOfAnsweredQuizzesResponse"/>
-</operation>
 <operation name="getCamps">
 <input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getCampsRequest" message="tns:getCamps"/>
 <output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getCampsResponse" message="tns:getCampsResponse"/>
 </operation>
-<operation name="loginWithBrugerAutMod">
-<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/loginWithBrugerAutModRequest" message="tns:loginWithBrugerAutMod"/>
-<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/loginWithBrugerAutModResponse" message="tns:loginWithBrugerAutModResponse"/>
-<fault message="tns:Exception" name="Exception" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/loginWithBrugerAutMod/Fault/Exception"/>
+<operation name="getCampsSortedInWeight">
+<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getCampsSortedInWeightRequest" message="tns:getCampsSortedInWeight"/>
+<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getCampsSortedInWeightResponse" message="tns:getCampsSortedInWeightResponse"/>
+</operation>
+<operation name="deleteCamp">
+<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/deleteCampRequest" message="tns:deleteCamp"/>
+<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/deleteCampResponse" message="tns:deleteCampResponse"/>
+</operation>
+<operation name="addCamp">
+<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addCampRequest" message="tns:addCamp"/>
+<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addCampResponse" message="tns:addCampResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addCamp/Fault/CustomErrorMessage"/>
+</operation>
+<operation name="setGarbage">
+<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/setGarbageRequest" message="tns:setGarbage"/>
+<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/setGarbageResponse" message="tns:setGarbageResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/setGarbage/Fault/CustomErrorMessage"/>
 </operation>
 <operation name="createUser">
 <input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/createUserRequest" message="tns:createUser"/>
 <output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/createUserResponse" message="tns:createUserResponse"/>
-</operation>
-<operation name="editUser">
-<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/editUserRequest" message="tns:editUser"/>
-<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/editUserResponse" message="tns:editUserResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/createUser/Fault/CustomErrorMessage"/>
 </operation>
 <operation name="getWallMessages">
 <input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getWallMessagesRequest" message="tns:getWallMessages"/>
@@ -111,14 +134,32 @@
 <operation name="addMessage">
 <input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addMessageRequest" message="tns:addMessage"/>
 <output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addMessageResponse" message="tns:addMessageResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addMessage/Fault/CustomErrorMessage"/>
 </operation>
 <operation name="addComment">
 <input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addCommentRequest" message="tns:addComment"/>
 <output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addCommentResponse" message="tns:addCommentResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/addComment/Fault/CustomErrorMessage"/>
 </operation>
-<operation name="getQuizzes">
-<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getQuizzesRequest" message="tns:getQuizzes"/>
-<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getQuizzesResponse" message="tns:getQuizzesResponse"/>
+<operation name="getCommentsForMessage">
+<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getCommentsForMessageRequest" message="tns:getCommentsForMessage"/>
+<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getCommentsForMessageResponse" message="tns:getCommentsForMessageResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getCommentsForMessage/Fault/CustomErrorMessage"/>
+</operation>
+<operation name="setUser">
+<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/setUserRequest" message="tns:setUser"/>
+<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/setUserResponse" message="tns:setUserResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/setUser/Fault/CustomErrorMessage"/>
+</operation>
+<operation name="getUser">
+<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getUserRequest" message="tns:getUser"/>
+<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getUserResponse" message="tns:getUserResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getUser/Fault/CustomErrorMessage"/>
+</operation>
+<operation name="getMessage">
+<input wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getMessageRequest" message="tns:getMessage"/>
+<output wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getMessageResponse" message="tns:getMessageResponse"/>
+<fault message="tns:CustomErrorMessage" name="CustomErrorMessage" wsam:Action="http://cleanoutloudserver/ICleanOutLoud/getMessage/Fault/CustomErrorMessage"/>
 </operation>
 </portType>
 <binding name="CleanOutLoudImplPortBinding" type="tns:ICleanOutLoud">
@@ -135,24 +176,6 @@
 <soap:fault name="Exception" use="literal"/>
 </fault>
 </operation>
-<operation name="getQuizAnswers">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getUsersOfAnsweredQuizzes">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="getCamps">
 <soap:operation soapAction=""/>
 <input>
@@ -162,7 +185,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="loginWithBrugerAutMod">
+<operation name="getCampsSortedInWeight">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -170,8 +193,38 @@
 <output>
 <soap:body use="literal"/>
 </output>
-<fault name="Exception">
-<soap:fault name="Exception" use="literal"/>
+</operation>
+<operation name="deleteCamp">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addCamp">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
+</fault>
+</operation>
+<operation name="setGarbage">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
 </fault>
 </operation>
 <operation name="createUser">
@@ -182,15 +235,9 @@
 <output>
 <soap:body use="literal"/>
 </output>
-</operation>
-<operation name="editUser">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
+</fault>
 </operation>
 <operation name="getWallMessages">
 <soap:operation soapAction=""/>
@@ -209,6 +256,9 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
+</fault>
 </operation>
 <operation name="addComment">
 <soap:operation soapAction=""/>
@@ -218,8 +268,11 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
+</fault>
 </operation>
-<operation name="getQuizzes">
+<operation name="getCommentsForMessage">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -227,6 +280,45 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
+</fault>
+</operation>
+<operation name="setUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
+</fault>
+</operation>
+<operation name="getUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
+</fault>
+</operation>
+<operation name="getMessage">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="CustomErrorMessage">
+<soap:fault name="CustomErrorMessage" use="literal"/>
+</fault>
 </operation>
 </binding>
 <service name="CleanOutLoudImplService">

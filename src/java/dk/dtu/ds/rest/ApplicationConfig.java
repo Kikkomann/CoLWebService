@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package dk.dtu.ds.login;
+package dk.dtu.ds.rest;
 
 import java.util.Set;
 import javax.ws.rs.core.Application;
 
-/**
- *
- * @author rune
- */
 @javax.ws.rs.ApplicationPath("CoL")
 public class ApplicationConfig extends Application {
 
@@ -29,7 +20,10 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(dk.dtu.ds.login.Login.class);
+        resources.add(dk.dtu.ds.rest.Camps.class);
+        resources.add(dk.dtu.ds.rest.Login.class);
+        resources.add(dk.dtu.ds.rest.Messages.class);
+        resources.add(dk.dtu.ds.rest.Users.class);
     }
     
 }

@@ -51,67 +51,84 @@ public interface ICleanOutLoud {
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns cleanoutloudserver.QuizAnswers
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getQuizAnswers", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetQuizAnswers")
-    @ResponseWrapper(localName = "getQuizAnswersResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetQuizAnswersResponse")
-    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getQuizAnswersRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getQuizAnswersResponse")
-    public QuizAnswers getQuizAnswers(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns cleanoutloudserver.AnsweredQuizzes
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUsersOfAnsweredQuizzes", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetUsersOfAnsweredQuizzes")
-    @ResponseWrapper(localName = "getUsersOfAnsweredQuizzesResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetUsersOfAnsweredQuizzesResponse")
-    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getUsersOfAnsweredQuizzesRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getUsersOfAnsweredQuizzesResponse")
-    public AnsweredQuizzes getUsersOfAnsweredQuizzes(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<cleanoutloudserver.Camps>
+     *     returns java.util.List<cleanoutloudserver.Camp>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getCamps", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetCamps")
     @ResponseWrapper(localName = "getCampsResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetCampsResponse")
     @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getCampsRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getCampsResponse")
-    public List<Camps> getCamps();
+    public List<Camp> getCamps();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<cleanoutloudserver.Camp>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCampsSortedInWeight", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetCampsSortedInWeight")
+    @ResponseWrapper(localName = "getCampsSortedInWeightResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetCampsSortedInWeightResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getCampsSortedInWeightRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getCampsSortedInWeightResponse")
+    public List<Camp> getCampsSortedInWeight();
 
     /**
      * 
      * @param arg1
      * @param arg0
-     * @return
-     *     returns java.lang.String
-     * @throws Exception_Exception
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "loginWithBrugerAutMod", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.LoginWithBrugerAutMod")
-    @ResponseWrapper(localName = "loginWithBrugerAutModResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.LoginWithBrugerAutModResponse")
-    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/loginWithBrugerAutModRequest", output = "http://cleanoutloudserver/ICleanOutLoud/loginWithBrugerAutModResponse", fault = {
-        @FaultAction(className = Exception_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/loginWithBrugerAutMod/Fault/Exception")
+    @RequestWrapper(localName = "deleteCamp", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.DeleteCamp")
+    @ResponseWrapper(localName = "deleteCampResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.DeleteCampResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/deleteCampRequest", output = "http://cleanoutloudserver/ICleanOutLoud/deleteCampResponse")
+    public void deleteCamp(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @throws CustomErrorMessage_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addCamp", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.AddCamp")
+    @ResponseWrapper(localName = "addCampResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.AddCampResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/addCampRequest", output = "http://cleanoutloudserver/ICleanOutLoud/addCampResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/addCamp/Fault/CustomErrorMessage")
     })
-    public String loginWithBrugerAutMod(
+    public void addCamp(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1)
-        throws Exception_Exception
+        throws CustomErrorMessage_Exception
+    ;
+
+    /**
+     * 
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @throws CustomErrorMessage_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "setGarbage", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.SetGarbage")
+    @ResponseWrapper(localName = "setGarbageResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.SetGarbageResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/setGarbageRequest", output = "http://cleanoutloudserver/ICleanOutLoud/setGarbageResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/setGarbage/Fault/CustomErrorMessage")
+    })
+    public void setGarbage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        Float arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2)
+        throws CustomErrorMessage_Exception
     ;
 
     /**
@@ -121,11 +138,14 @@ public interface ICleanOutLoud {
      * @param arg4
      * @param arg1
      * @param arg0
+     * @throws CustomErrorMessage_Exception
      */
     @WebMethod
     @RequestWrapper(localName = "createUser", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.CreateUser")
     @ResponseWrapper(localName = "createUserResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.CreateUserResponse")
-    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/createUserRequest", output = "http://cleanoutloudserver/ICleanOutLoud/createUserResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/createUserRequest", output = "http://cleanoutloudserver/ICleanOutLoud/createUserResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/createUser/Fault/CustomErrorMessage")
+    })
     public void createUser(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
@@ -136,78 +156,146 @@ public interface ICleanOutLoud {
         @WebParam(name = "arg3", targetNamespace = "")
         String arg3,
         @WebParam(name = "arg4", targetNamespace = "")
-        String arg4);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "editUser", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.EditUser")
-    @ResponseWrapper(localName = "editUserResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.EditUserResponse")
-    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/editUserRequest", output = "http://cleanoutloudserver/ICleanOutLoud/editUserResponse")
-    public void editUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Users arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+        String arg4)
+        throws CustomErrorMessage_Exception
+    ;
 
     /**
      * 
      * @return
-     *     returns java.util.List<cleanoutloudserver.Messages>
+     *     returns java.util.List<cleanoutloudserver.Message>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getWallMessages", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetWallMessages")
     @ResponseWrapper(localName = "getWallMessagesResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetWallMessagesResponse")
     @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getWallMessagesRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getWallMessagesResponse")
-    public List<Messages> getWallMessages();
+    public List<Message> getWallMessages();
 
     /**
      * 
      * @param arg1
      * @param arg0
+     * @throws CustomErrorMessage_Exception
      */
     @WebMethod
     @RequestWrapper(localName = "addMessage", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.AddMessage")
     @ResponseWrapper(localName = "addMessageResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.AddMessageResponse")
-    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/addMessageRequest", output = "http://cleanoutloudserver/ICleanOutLoud/addMessageResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/addMessageRequest", output = "http://cleanoutloudserver/ICleanOutLoud/addMessageResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/addMessage/Fault/CustomErrorMessage")
+    })
     public void addMessage(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+        String arg1)
+        throws CustomErrorMessage_Exception
+    ;
 
     /**
      * 
      * @param arg2
      * @param arg1
      * @param arg0
+     * @throws CustomErrorMessage_Exception
      */
     @WebMethod
     @RequestWrapper(localName = "addComment", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.AddComment")
     @ResponseWrapper(localName = "addCommentResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.AddCommentResponse")
-    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/addCommentRequest", output = "http://cleanoutloudserver/ICleanOutLoud/addCommentResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/addCommentRequest", output = "http://cleanoutloudserver/ICleanOutLoud/addCommentResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/addComment/Fault/CustomErrorMessage")
+    })
     public void addComment(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        Messages arg1,
+        int arg1,
         @WebParam(name = "arg2", targetNamespace = "")
-        String arg2);
+        String arg2)
+        throws CustomErrorMessage_Exception
+    ;
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<cleanoutloudserver.Quiz>
+     *     returns java.util.List<cleanoutloudserver.Comment>
+     * @throws CustomErrorMessage_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getQuizzes", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetQuizzes")
-    @ResponseWrapper(localName = "getQuizzesResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetQuizzesResponse")
-    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getQuizzesRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getQuizzesResponse")
-    public List<Quiz> getQuizzes();
+    @RequestWrapper(localName = "getCommentsForMessage", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetCommentsForMessage")
+    @ResponseWrapper(localName = "getCommentsForMessageResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetCommentsForMessageResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getCommentsForMessageRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getCommentsForMessageResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/getCommentsForMessage/Fault/CustomErrorMessage")
+    })
+    public List<Comment> getCommentsForMessage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0)
+        throws CustomErrorMessage_Exception
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @throws CustomErrorMessage_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "setUser", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.SetUser")
+    @ResponseWrapper(localName = "setUserResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.SetUserResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/setUserRequest", output = "http://cleanoutloudserver/ICleanOutLoud/setUserResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/setUser/Fault/CustomErrorMessage")
+    })
+    public void setUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        User arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1)
+        throws CustomErrorMessage_Exception
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns cleanoutloudserver.User
+     * @throws CustomErrorMessage_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUser", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetUser")
+    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetUserResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getUserRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getUserResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/getUser/Fault/CustomErrorMessage")
+    })
+    public User getUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1)
+        throws CustomErrorMessage_Exception
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns cleanoutloudserver.Message
+     * @throws CustomErrorMessage_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getMessage", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetMessage")
+    @ResponseWrapper(localName = "getMessageResponse", targetNamespace = "http://cleanoutloudserver/", className = "cleanoutloudserver.GetMessageResponse")
+    @Action(input = "http://cleanoutloudserver/ICleanOutLoud/getMessageRequest", output = "http://cleanoutloudserver/ICleanOutLoud/getMessageResponse", fault = {
+        @FaultAction(className = CustomErrorMessage_Exception.class, value = "http://cleanoutloudserver/ICleanOutLoud/getMessage/Fault/CustomErrorMessage")
+    })
+    public Message getMessage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0)
+        throws CustomErrorMessage_Exception
+    ;
 
 }

@@ -24,34 +24,39 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetQuizzes_QNAME = new QName("http://cleanoutloudserver/", "getQuizzes");
+    private final static QName _DeleteCamp_QNAME = new QName("http://cleanoutloudserver/", "deleteCamp");
+    private final static QName _GetMessage_QNAME = new QName("http://cleanoutloudserver/", "getMessage");
+    private final static QName _SetGarbage_QNAME = new QName("http://cleanoutloudserver/", "setGarbage");
+    private final static QName _CustomErrorMessage_QNAME = new QName("http://cleanoutloudserver/", "CustomErrorMessage");
+    private final static QName _Message_QNAME = new QName("http://cleanoutloudserver/", "message");
     private final static QName _Exception_QNAME = new QName("http://cleanoutloudserver/", "Exception");
-    private final static QName _Users_QNAME = new QName("http://cleanoutloudserver/", "users");
-    private final static QName _Quiz_QNAME = new QName("http://cleanoutloudserver/", "quiz");
+    private final static QName _Camp_QNAME = new QName("http://cleanoutloudserver/", "camp");
+    private final static QName _GetCommentsForMessage_QNAME = new QName("http://cleanoutloudserver/", "getCommentsForMessage");
     private final static QName _AddCommentResponse_QNAME = new QName("http://cleanoutloudserver/", "addCommentResponse");
     private final static QName _GetCamps_QNAME = new QName("http://cleanoutloudserver/", "getCamps");
     private final static QName _LoginResponse_QNAME = new QName("http://cleanoutloudserver/", "loginResponse");
     private final static QName _CreateUserResponse_QNAME = new QName("http://cleanoutloudserver/", "createUserResponse");
-    private final static QName _Messages_QNAME = new QName("http://cleanoutloudserver/", "messages");
+    private final static QName _Comment_QNAME = new QName("http://cleanoutloudserver/", "comment");
     private final static QName _CreateUser_QNAME = new QName("http://cleanoutloudserver/", "createUser");
-    private final static QName _GetQuizAnswersResponse_QNAME = new QName("http://cleanoutloudserver/", "getQuizAnswersResponse");
-    private final static QName _QuizAnswers_QNAME = new QName("http://cleanoutloudserver/", "quizAnswers");
-    private final static QName _Camps_QNAME = new QName("http://cleanoutloudserver/", "camps");
+    private final static QName _SetGarbageResponse_QNAME = new QName("http://cleanoutloudserver/", "setGarbageResponse");
+    private final static QName _User_QNAME = new QName("http://cleanoutloudserver/", "user");
     private final static QName _GetWallMessages_QNAME = new QName("http://cleanoutloudserver/", "getWallMessages");
-    private final static QName _EditUser_QNAME = new QName("http://cleanoutloudserver/", "editUser");
-    private final static QName _GetUsersOfAnsweredQuizzes_QNAME = new QName("http://cleanoutloudserver/", "getUsersOfAnsweredQuizzes");
-    private final static QName _GetUsersOfAnsweredQuizzesResponse_QNAME = new QName("http://cleanoutloudserver/", "getUsersOfAnsweredQuizzesResponse");
-    private final static QName _LoginWithBrugerAutMod_QNAME = new QName("http://cleanoutloudserver/", "loginWithBrugerAutMod");
     private final static QName _Login_QNAME = new QName("http://cleanoutloudserver/", "login");
     private final static QName _AddMessageResponse_QNAME = new QName("http://cleanoutloudserver/", "addMessageResponse");
     private final static QName _AddMessage_QNAME = new QName("http://cleanoutloudserver/", "addMessage");
-    private final static QName _EditUserResponse_QNAME = new QName("http://cleanoutloudserver/", "editUserResponse");
+    private final static QName _GetMessageResponse_QNAME = new QName("http://cleanoutloudserver/", "getMessageResponse");
+    private final static QName _AddCamp_QNAME = new QName("http://cleanoutloudserver/", "addCamp");
+    private final static QName _GetUserResponse_QNAME = new QName("http://cleanoutloudserver/", "getUserResponse");
+    private final static QName _AddCampResponse_QNAME = new QName("http://cleanoutloudserver/", "addCampResponse");
+    private final static QName _SetUserResponse_QNAME = new QName("http://cleanoutloudserver/", "setUserResponse");
+    private final static QName _GetCampsSortedInWeight_QNAME = new QName("http://cleanoutloudserver/", "getCampsSortedInWeight");
+    private final static QName _GetUser_QNAME = new QName("http://cleanoutloudserver/", "getUser");
     private final static QName _GetWallMessagesResponse_QNAME = new QName("http://cleanoutloudserver/", "getWallMessagesResponse");
-    private final static QName _GetQuizAnswers_QNAME = new QName("http://cleanoutloudserver/", "getQuizAnswers");
-    private final static QName _GetQuizzesResponse_QNAME = new QName("http://cleanoutloudserver/", "getQuizzesResponse");
+    private final static QName _SetUser_QNAME = new QName("http://cleanoutloudserver/", "setUser");
     private final static QName _AddComment_QNAME = new QName("http://cleanoutloudserver/", "addComment");
-    private final static QName _AnsweredQuizzes_QNAME = new QName("http://cleanoutloudserver/", "answeredQuizzes");
-    private final static QName _LoginWithBrugerAutModResponse_QNAME = new QName("http://cleanoutloudserver/", "loginWithBrugerAutModResponse");
+    private final static QName _GetCommentsForMessageResponse_QNAME = new QName("http://cleanoutloudserver/", "getCommentsForMessageResponse");
+    private final static QName _GetCampsSortedInWeightResponse_QNAME = new QName("http://cleanoutloudserver/", "getCampsSortedInWeightResponse");
+    private final static QName _DeleteCampResponse_QNAME = new QName("http://cleanoutloudserver/", "deleteCampResponse");
     private final static QName _GetCampsResponse_QNAME = new QName("http://cleanoutloudserver/", "getCampsResponse");
 
     /**
@@ -62,43 +67,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link EditUserResponse }
+     * Create an instance of {@link AddCamp }
      * 
      */
-    public EditUserResponse createEditUserResponse() {
-        return new EditUserResponse();
+    public AddCamp createAddCamp() {
+        return new AddCamp();
     }
 
     /**
-     * Create an instance of {@link EditUser }
+     * Create an instance of {@link GetUserResponse }
      * 
      */
-    public EditUser createEditUser() {
-        return new EditUser();
+    public GetUserResponse createGetUserResponse() {
+        return new GetUserResponse();
     }
 
     /**
-     * Create an instance of {@link GetUsersOfAnsweredQuizzes }
+     * Create an instance of {@link AddCampResponse }
      * 
      */
-    public GetUsersOfAnsweredQuizzes createGetUsersOfAnsweredQuizzes() {
-        return new GetUsersOfAnsweredQuizzes();
+    public AddCampResponse createAddCampResponse() {
+        return new AddCampResponse();
     }
 
     /**
-     * Create an instance of {@link GetUsersOfAnsweredQuizzesResponse }
+     * Create an instance of {@link SetUserResponse }
      * 
      */
-    public GetUsersOfAnsweredQuizzesResponse createGetUsersOfAnsweredQuizzesResponse() {
-        return new GetUsersOfAnsweredQuizzesResponse();
+    public SetUserResponse createSetUserResponse() {
+        return new SetUserResponse();
     }
 
     /**
-     * Create an instance of {@link LoginWithBrugerAutMod }
+     * Create an instance of {@link GetCampsSortedInWeight }
      * 
      */
-    public LoginWithBrugerAutMod createLoginWithBrugerAutMod() {
-        return new LoginWithBrugerAutMod();
+    public GetCampsSortedInWeight createGetCampsSortedInWeight() {
+        return new GetCampsSortedInWeight();
+    }
+
+    /**
+     * Create an instance of {@link GetUser }
+     * 
+     */
+    public GetUser createGetUser() {
+        return new GetUser();
     }
 
     /**
@@ -126,19 +139,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AnsweredQuizzes }
+     * Create an instance of {@link GetMessageResponse }
      * 
      */
-    public AnsweredQuizzes createAnsweredQuizzes() {
-        return new AnsweredQuizzes();
+    public GetMessageResponse createGetMessageResponse() {
+        return new GetMessageResponse();
     }
 
     /**
-     * Create an instance of {@link LoginWithBrugerAutModResponse }
+     * Create an instance of {@link GetCommentsForMessageResponse }
      * 
      */
-    public LoginWithBrugerAutModResponse createLoginWithBrugerAutModResponse() {
-        return new LoginWithBrugerAutModResponse();
+    public GetCommentsForMessageResponse createGetCommentsForMessageResponse() {
+        return new GetCommentsForMessageResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCampsSortedInWeightResponse }
+     * 
+     */
+    public GetCampsSortedInWeightResponse createGetCampsSortedInWeightResponse() {
+        return new GetCampsSortedInWeightResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteCampResponse }
+     * 
+     */
+    public DeleteCampResponse createDeleteCampResponse() {
+        return new DeleteCampResponse();
     }
 
     /**
@@ -158,19 +187,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetQuizAnswers }
+     * Create an instance of {@link SetUser }
      * 
      */
-    public GetQuizAnswers createGetQuizAnswers() {
-        return new GetQuizAnswers();
-    }
-
-    /**
-     * Create an instance of {@link GetQuizzesResponse }
-     * 
-     */
-    public GetQuizzesResponse createGetQuizzesResponse() {
-        return new GetQuizzesResponse();
+    public SetUser createSetUser() {
+        return new SetUser();
     }
 
     /**
@@ -182,11 +203,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Quiz }
+     * Create an instance of {@link GetCommentsForMessage }
      * 
      */
-    public Quiz createQuiz() {
-        return new Quiz();
+    public GetCommentsForMessage createGetCommentsForMessage() {
+        return new GetCommentsForMessage();
     }
 
     /**
@@ -222,11 +243,43 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetQuizzes }
+     * Create an instance of {@link DeleteCamp }
      * 
      */
-    public GetQuizzes createGetQuizzes() {
-        return new GetQuizzes();
+    public DeleteCamp createDeleteCamp() {
+        return new DeleteCamp();
+    }
+
+    /**
+     * Create an instance of {@link GetMessage }
+     * 
+     */
+    public GetMessage createGetMessage() {
+        return new GetMessage();
+    }
+
+    /**
+     * Create an instance of {@link SetGarbage }
+     * 
+     */
+    public SetGarbage createSetGarbage() {
+        return new SetGarbage();
+    }
+
+    /**
+     * Create an instance of {@link CustomErrorMessage }
+     * 
+     */
+    public CustomErrorMessage createCustomErrorMessage() {
+        return new CustomErrorMessage();
+    }
+
+    /**
+     * Create an instance of {@link Message }
+     * 
+     */
+    public Message createMessage() {
+        return new Message();
     }
 
     /**
@@ -238,19 +291,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Users }
+     * Create an instance of {@link Camp }
      * 
      */
-    public Users createUsers() {
-        return new Users();
-    }
-
-    /**
-     * Create an instance of {@link Camps }
-     * 
-     */
-    public Camps createCamps() {
-        return new Camps();
+    public Camp createCamp() {
+        return new Camp();
     }
 
     /**
@@ -262,11 +307,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Messages }
+     * Create an instance of {@link Comment }
      * 
      */
-    public Messages createMessages() {
-        return new Messages();
+    public Comment createComment() {
+        return new Comment();
     }
 
     /**
@@ -278,36 +323,64 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetQuizAnswersResponse }
+     * Create an instance of {@link SetGarbageResponse }
      * 
      */
-    public GetQuizAnswersResponse createGetQuizAnswersResponse() {
-        return new GetQuizAnswersResponse();
+    public SetGarbageResponse createSetGarbageResponse() {
+        return new SetGarbageResponse();
     }
 
     /**
-     * Create an instance of {@link QuizAnswers }
+     * Create an instance of {@link User }
      * 
      */
-    public QuizAnswers createQuizAnswers() {
-        return new QuizAnswers();
+    public User createUser() {
+        return new User();
     }
 
     /**
-     * Create an instance of {@link AnsweredQuizzesPK }
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteCamp }{@code >}}
      * 
      */
-    public AnsweredQuizzesPK createAnsweredQuizzesPK() {
-        return new AnsweredQuizzesPK();
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "deleteCamp")
+    public JAXBElement<DeleteCamp> createDeleteCamp(DeleteCamp value) {
+        return new JAXBElement<DeleteCamp>(_DeleteCamp_QNAME, DeleteCamp.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetQuizzes }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMessage }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getQuizzes")
-    public JAXBElement<GetQuizzes> createGetQuizzes(GetQuizzes value) {
-        return new JAXBElement<GetQuizzes>(_GetQuizzes_QNAME, GetQuizzes.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getMessage")
+    public JAXBElement<GetMessage> createGetMessage(GetMessage value) {
+        return new JAXBElement<GetMessage>(_GetMessage_QNAME, GetMessage.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetGarbage }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "setGarbage")
+    public JAXBElement<SetGarbage> createSetGarbage(SetGarbage value) {
+        return new JAXBElement<SetGarbage>(_SetGarbage_QNAME, SetGarbage.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CustomErrorMessage }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "CustomErrorMessage")
+    public JAXBElement<CustomErrorMessage> createCustomErrorMessage(CustomErrorMessage value) {
+        return new JAXBElement<CustomErrorMessage>(_CustomErrorMessage_QNAME, CustomErrorMessage.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Message }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "message")
+    public JAXBElement<Message> createMessage(Message value) {
+        return new JAXBElement<Message>(_Message_QNAME, Message.class, null, value);
     }
 
     /**
@@ -320,21 +393,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Users }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Camp }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "users")
-    public JAXBElement<Users> createUsers(Users value) {
-        return new JAXBElement<Users>(_Users_QNAME, Users.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "camp")
+    public JAXBElement<Camp> createCamp(Camp value) {
+        return new JAXBElement<Camp>(_Camp_QNAME, Camp.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Quiz }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCommentsForMessage }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "quiz")
-    public JAXBElement<Quiz> createQuiz(Quiz value) {
-        return new JAXBElement<Quiz>(_Quiz_QNAME, Quiz.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getCommentsForMessage")
+    public JAXBElement<GetCommentsForMessage> createGetCommentsForMessage(GetCommentsForMessage value) {
+        return new JAXBElement<GetCommentsForMessage>(_GetCommentsForMessage_QNAME, GetCommentsForMessage.class, null, value);
     }
 
     /**
@@ -374,12 +447,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Messages }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Comment }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "messages")
-    public JAXBElement<Messages> createMessages(Messages value) {
-        return new JAXBElement<Messages>(_Messages_QNAME, Messages.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "comment")
+    public JAXBElement<Comment> createComment(Comment value) {
+        return new JAXBElement<Comment>(_Comment_QNAME, Comment.class, null, value);
     }
 
     /**
@@ -392,30 +465,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetQuizAnswersResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetGarbageResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getQuizAnswersResponse")
-    public JAXBElement<GetQuizAnswersResponse> createGetQuizAnswersResponse(GetQuizAnswersResponse value) {
-        return new JAXBElement<GetQuizAnswersResponse>(_GetQuizAnswersResponse_QNAME, GetQuizAnswersResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "setGarbageResponse")
+    public JAXBElement<SetGarbageResponse> createSetGarbageResponse(SetGarbageResponse value) {
+        return new JAXBElement<SetGarbageResponse>(_SetGarbageResponse_QNAME, SetGarbageResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link QuizAnswers }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link User }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "quizAnswers")
-    public JAXBElement<QuizAnswers> createQuizAnswers(QuizAnswers value) {
-        return new JAXBElement<QuizAnswers>(_QuizAnswers_QNAME, QuizAnswers.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Camps }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "camps")
-    public JAXBElement<Camps> createCamps(Camps value) {
-        return new JAXBElement<Camps>(_Camps_QNAME, Camps.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "user")
+    public JAXBElement<User> createUser(User value) {
+        return new JAXBElement<User>(_User_QNAME, User.class, null, value);
     }
 
     /**
@@ -425,42 +489,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getWallMessages")
     public JAXBElement<GetWallMessages> createGetWallMessages(GetWallMessages value) {
         return new JAXBElement<GetWallMessages>(_GetWallMessages_QNAME, GetWallMessages.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EditUser }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "editUser")
-    public JAXBElement<EditUser> createEditUser(EditUser value) {
-        return new JAXBElement<EditUser>(_EditUser_QNAME, EditUser.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetUsersOfAnsweredQuizzes }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getUsersOfAnsweredQuizzes")
-    public JAXBElement<GetUsersOfAnsweredQuizzes> createGetUsersOfAnsweredQuizzes(GetUsersOfAnsweredQuizzes value) {
-        return new JAXBElement<GetUsersOfAnsweredQuizzes>(_GetUsersOfAnsweredQuizzes_QNAME, GetUsersOfAnsweredQuizzes.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetUsersOfAnsweredQuizzesResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getUsersOfAnsweredQuizzesResponse")
-    public JAXBElement<GetUsersOfAnsweredQuizzesResponse> createGetUsersOfAnsweredQuizzesResponse(GetUsersOfAnsweredQuizzesResponse value) {
-        return new JAXBElement<GetUsersOfAnsweredQuizzesResponse>(_GetUsersOfAnsweredQuizzesResponse_QNAME, GetUsersOfAnsweredQuizzesResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LoginWithBrugerAutMod }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "loginWithBrugerAutMod")
-    public JAXBElement<LoginWithBrugerAutMod> createLoginWithBrugerAutMod(LoginWithBrugerAutMod value) {
-        return new JAXBElement<LoginWithBrugerAutMod>(_LoginWithBrugerAutMod_QNAME, LoginWithBrugerAutMod.class, null, value);
     }
 
     /**
@@ -491,12 +519,66 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EditUserResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMessageResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "editUserResponse")
-    public JAXBElement<EditUserResponse> createEditUserResponse(EditUserResponse value) {
-        return new JAXBElement<EditUserResponse>(_EditUserResponse_QNAME, EditUserResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getMessageResponse")
+    public JAXBElement<GetMessageResponse> createGetMessageResponse(GetMessageResponse value) {
+        return new JAXBElement<GetMessageResponse>(_GetMessageResponse_QNAME, GetMessageResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddCamp }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "addCamp")
+    public JAXBElement<AddCamp> createAddCamp(AddCamp value) {
+        return new JAXBElement<AddCamp>(_AddCamp_QNAME, AddCamp.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getUserResponse")
+    public JAXBElement<GetUserResponse> createGetUserResponse(GetUserResponse value) {
+        return new JAXBElement<GetUserResponse>(_GetUserResponse_QNAME, GetUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddCampResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "addCampResponse")
+    public JAXBElement<AddCampResponse> createAddCampResponse(AddCampResponse value) {
+        return new JAXBElement<AddCampResponse>(_AddCampResponse_QNAME, AddCampResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "setUserResponse")
+    public JAXBElement<SetUserResponse> createSetUserResponse(SetUserResponse value) {
+        return new JAXBElement<SetUserResponse>(_SetUserResponse_QNAME, SetUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCampsSortedInWeight }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getCampsSortedInWeight")
+    public JAXBElement<GetCampsSortedInWeight> createGetCampsSortedInWeight(GetCampsSortedInWeight value) {
+        return new JAXBElement<GetCampsSortedInWeight>(_GetCampsSortedInWeight_QNAME, GetCampsSortedInWeight.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUser }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getUser")
+    public JAXBElement<GetUser> createGetUser(GetUser value) {
+        return new JAXBElement<GetUser>(_GetUser_QNAME, GetUser.class, null, value);
     }
 
     /**
@@ -509,21 +591,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetQuizAnswers }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetUser }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getQuizAnswers")
-    public JAXBElement<GetQuizAnswers> createGetQuizAnswers(GetQuizAnswers value) {
-        return new JAXBElement<GetQuizAnswers>(_GetQuizAnswers_QNAME, GetQuizAnswers.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetQuizzesResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getQuizzesResponse")
-    public JAXBElement<GetQuizzesResponse> createGetQuizzesResponse(GetQuizzesResponse value) {
-        return new JAXBElement<GetQuizzesResponse>(_GetQuizzesResponse_QNAME, GetQuizzesResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "setUser")
+    public JAXBElement<SetUser> createSetUser(SetUser value) {
+        return new JAXBElement<SetUser>(_SetUser_QNAME, SetUser.class, null, value);
     }
 
     /**
@@ -536,21 +609,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AnsweredQuizzes }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCommentsForMessageResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "answeredQuizzes")
-    public JAXBElement<AnsweredQuizzes> createAnsweredQuizzes(AnsweredQuizzes value) {
-        return new JAXBElement<AnsweredQuizzes>(_AnsweredQuizzes_QNAME, AnsweredQuizzes.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getCommentsForMessageResponse")
+    public JAXBElement<GetCommentsForMessageResponse> createGetCommentsForMessageResponse(GetCommentsForMessageResponse value) {
+        return new JAXBElement<GetCommentsForMessageResponse>(_GetCommentsForMessageResponse_QNAME, GetCommentsForMessageResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LoginWithBrugerAutModResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCampsSortedInWeightResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "loginWithBrugerAutModResponse")
-    public JAXBElement<LoginWithBrugerAutModResponse> createLoginWithBrugerAutModResponse(LoginWithBrugerAutModResponse value) {
-        return new JAXBElement<LoginWithBrugerAutModResponse>(_LoginWithBrugerAutModResponse_QNAME, LoginWithBrugerAutModResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "getCampsSortedInWeightResponse")
+    public JAXBElement<GetCampsSortedInWeightResponse> createGetCampsSortedInWeightResponse(GetCampsSortedInWeightResponse value) {
+        return new JAXBElement<GetCampsSortedInWeightResponse>(_GetCampsSortedInWeightResponse_QNAME, GetCampsSortedInWeightResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteCampResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cleanoutloudserver/", name = "deleteCampResponse")
+    public JAXBElement<DeleteCampResponse> createDeleteCampResponse(DeleteCampResponse value) {
+        return new JAXBElement<DeleteCampResponse>(_DeleteCampResponse_QNAME, DeleteCampResponse.class, null, value);
     }
 
     /**

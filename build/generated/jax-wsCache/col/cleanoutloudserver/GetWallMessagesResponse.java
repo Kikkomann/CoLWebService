@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://cleanoutloudserver/}messages" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://cleanoutloudserver/}message" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 public class GetWallMessagesResponse {
 
     @XmlElement(name = "return")
-    protected List<Messages> _return;
+    protected List<Message> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class GetWallMessagesResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Messages }
+     * {@link Message }
      * 
      * 
      */
-    public List<Messages> getReturn() {
+    public List<Message> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<Messages>();
+            _return = new ArrayList<Message>();
         }
         return this._return;
     }

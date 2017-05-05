@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="arg1" type="{http://cleanoutloudserver/}messages" minOccurs="0"/>
+ *         &lt;element name="arg1" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="arg2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 public class AddComment {
 
     protected String arg0;
-    protected Messages arg1;
+    protected int arg1;
     protected String arg2;
 
     /**
@@ -66,24 +66,16 @@ public class AddComment {
     /**
      * Gets the value of the arg1 property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Messages }
-     *     
      */
-    public Messages getArg1() {
+    public int getArg1() {
         return arg1;
     }
 
     /**
      * Sets the value of the arg1 property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Messages }
-     *     
      */
-    public void setArg1(Messages value) {
+    public void setArg1(int value) {
         this.arg1 = value;
     }
 
