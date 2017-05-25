@@ -23,8 +23,8 @@ public class Messages {
     @Path("/")
     // Produces JSON as response
     @Produces(MediaType.APPLICATION_JSON)
-    // Query parameters are parameters: http://localhost:8084/colrest/CoL/objects/wall
-    // Server address: http://52.43.233.138:8080/CoLWebService/CoL/objects/wall
+    // Query parameters are parameters: http://localhost:8084/colrest/CoL/messages
+    // Server address: http://52.43.233.138:8080/CoLWebService/CoL/messages
     public String getMessages() throws MalformedURLException, Exception {
         URL url = new URL("http://ec2-52-43-233-138.us-west-2.compute.amazonaws.com:3769/col?wsdl");
         QName qname = new QName("http://cleanoutloudserver/", "CleanOutLoudImplService");
@@ -54,7 +54,7 @@ public class Messages {
     // Produces JSON as response
     @Produces(MediaType.APPLICATION_JSON)
     // Query parameters are parameters: http://localhost:8084/colrest/CoL/objects/wall
-    // Server address: http://52.43.233.138:8080/CoLWebService/CoL/objects/wall
+    // Server address: http://52.43.233.138:8080/CoLWebService/CoL/messages/comments?messageid=messageid
     public String getComments(@QueryParam("messageid") Integer messageId) throws MalformedURLException, Exception {
         URL url = new URL("http://ec2-52-43-233-138.us-west-2.compute.amazonaws.com:3769/col?wsdl");
         QName qname = new QName("http://cleanoutloudserver/", "CleanOutLoudImplService");

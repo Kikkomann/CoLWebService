@@ -15,7 +15,7 @@ import javax.xml.ws.Service;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
-@Path("users")
+@Path("/")
 public class Users {
     @GET
     @Path("user")
